@@ -2,17 +2,32 @@
 
 A full-stack MERN (MongoDB, Express, React, Node.js) application for managing a sweet shop. This project demonstrates modern web development practices including RESTful API design, JWT authentication, role-based access control, and responsive UI design.
 
+## 🌐 Live Demo
+
+| Service         | URL                                                                    |
+| --------------- | ---------------------------------------------------------------------- |
+| **Frontend**    | [https://sweet-app-one.vercel.app](https://sweet-app-one.vercel.app)   |
+| **Backend API** | [https://sweetapp.onrender.com/api](https://sweetapp.onrender.com/api) |
+
+### Demo Credentials
+
+| Role  | Email                  | Password   |
+| ----- | ---------------------- | ---------- |
+| Admin | `admin@sweetbhumi.com` | `bhumi123` |
+
 ## 📋 Table of Contents
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+- [Live Demo](#-live-demo)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [API Documentation](#-api-documentation)
+- [Testing](#-testing)
+- [My AI Usage](#-my-ai-usage)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## ✨ Features
 
@@ -202,10 +217,48 @@ Frontend will run on http://localhost:3000
 ```bash
 cd backend
 npm test
-
-# With coverage
-npm run test:coverage
 ```
+
+## 🚀 Deployment
+
+### Backend Deployment (Render)
+
+The backend is deployed on **Render**.
+
+1. Create a new **Web Service** on [Render](https://render.com)
+2. Connect your GitHub repository
+3. Configure:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. Add Environment Variables:
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
+   - `JWT_SECRET`: Your secret key
+   - `JWT_EXPIRE`: `7d`
+   - `NODE_ENV`: `production`
+
+The `npm run build` command automatically seeds the database with initial data (admin user and sweets).
+
+### Frontend Deployment (Vercel)
+
+The frontend is deployed on **Vercel**.
+
+1. Create a new project on [Vercel](https://vercel.com)
+2. Connect your GitHub repository
+3. Configure:
+   - **Root Directory**: `frontend`
+   - **Framework Preset**: Create React App
+4. Add Environment Variables:
+   - `REACT_APP_API_URL`: `https://sweetapp.onrender.com/api`
+5. Deploy!
+
+### Deployment URLs
+
+- **Frontend**: https://sweet-app-one.vercel.app/
+- **Backend API**: https://sweetapp.onrender.com/api
+- **API Health Check**: https://sweetapp.onrender.com/api/health
+
+---
 
 ## 📚 API Documentation
 
