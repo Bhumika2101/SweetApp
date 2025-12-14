@@ -1,0 +1,137 @@
+.sweet-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  animation: fadeIn 0.5s ease-in;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sweet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sweet-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.sweet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.sweet-card:hover .sweet-image {
+  transform: scale(1.1);
+}
+
+.out-of-stock-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--danger-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.category-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sweet-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sweet-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.sweet-description {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.sweet-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.sweet-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+.sweet-quantity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.sweet-quantity.out-of-stock {
+  color: var(--danger-color);
+}
+
+.sweet-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.sweet-actions .btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .sweet-image-container {
+    height: 160px;
+  }
+
+  .sweet-name {
+    font-size: 18px;
+  }
+
+  .sweet-price {
+    font-size: 20px;
+  }
+}
