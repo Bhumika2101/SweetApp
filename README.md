@@ -143,7 +143,7 @@ SweetApp/
 1. **Clone the repository**
 
 ```bash
-cd e:\Bhumi\SweetApp
+git clone https://github.com/Bhumika2101/SweetApp.git
 ```
 
 2. **Setup Backend**
