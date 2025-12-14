@@ -8,7 +8,8 @@
     "dev": "nodemon server.js",
     "test": "jest --watchAll --verbose",
     "test:coverage": "jest --coverage",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "build": "npm run seed"
   },
   "keywords": [
     "sweet-shop",

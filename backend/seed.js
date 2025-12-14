@@ -172,14 +172,23 @@ const sweets = [
 const seedDatabase = async () => {
   try {
     // Connect to MongoDB
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB_URI);
 
     console.log("MongoDB Connected...");
 
-    // Clear existing data
+    // Check if data already exists
+    const existingSweets = await Sweet.countDocuments();
+    const existingUsers = await User.countDocuments();
+
+    if (existingSweets > 0 && existingUsers > 0) {
+      console.log("Database already seeded. Skipping...");
+      console.log(`   - Existing Users: ${existingUsers}`);
+      console.log(`   - Existing Sweets: ${existingSweets}`);
+      process.exit(0);
+      return;
+    }
+
+    // Clear existing data only if partially seeded
     await User.deleteMany({});
     await Sweet.deleteMany({});
     console.log("Existing data cleared...");
